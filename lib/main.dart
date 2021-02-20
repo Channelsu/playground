@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/detail_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,10 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   List<String> titles = ['Amazon', '楽天', 'Yahoo!'];
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _titleAdd() {
+    titles.add('Google');
+    setState(() {});
   }
 
   @override
@@ -72,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: Text(titles[idx]),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  print('詳細画面へ');
+                  // 画面遷移
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => DetailPage()
+                  ));
                 },
               ),
               Divider(),
@@ -81,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _titleAdd,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), 
