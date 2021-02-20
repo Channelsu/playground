@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   // 画面遷移
                   Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => DetailPage()
+                    builder: (context) => DetailPage(titles[idx])
                   ));
                 },
               ),
